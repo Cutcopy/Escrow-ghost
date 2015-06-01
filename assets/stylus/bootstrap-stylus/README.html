@@ -1,0 +1,72 @@
+<h1 id="bootstrap-stylus-3-3-4">Bootstrap Stylus 3.3.4</h1>
+<p>Port of the amazing <a href="https://github.com/twbs/bootstrap">Bootstrap 3.3.4</a> to <a href="http://learnboost.github.com/stylus/">Stylus 0.47.0</a>.</p>
+<p>There might be some slight color differences due to the differences between the color functions in LESS and those in Stylus.</p>
+<h2 id="installing">Installing</h2>
+<p>Latest version via <a href="https://github.com/bower/bower">Bower</a>:</p>
+<pre><code class="lang-bash">$ bower install bootstrap-stylus
+</code></pre>
+<p>Legacy 2.3.2 version is kept in <a href="https://github.com/Acquisio/bootstrap-stylus/releases/tag/v2.3.2">this release</a> and can be installed via Bower as well, however it does not include any build scripts.</p>
+<pre><code class="lang-bash">$ bower install bootstrap-stylus#2.3.2
+</code></pre>
+<p>Via npm:</p>
+<pre><code class="lang-bash">$ npm install bootstrap-styl
+</code></pre>
+<p>Example of requiring and using bootstrap middleware to create compile function to utilize in other frameworks.</p>
+<pre><code class="lang-javascript">var bootstrap = require(&#39;bootstrap-styl&#39;),
+    stylus    = require(&#39;stylus&#39;);
+
+function compile(str) {
+  return stylus(str)
+    .use(bootstrap());
+}
+</code></pre>
+<p>To import whole bootstrap in your stylus file:</p>
+<pre><code class="lang-stylus">@import bootstrap
+</code></pre>
+<p>Alternatively to import individual components:</p>
+<pre><code class="lang-stylus">@import &#39;bootstrap/alerts&#39;
+@import &#39;bootstrap/variables&#39;
+@import &#39;bootstrap/mixins&#39;
+</code></pre>
+<h2 id="compiling-css-from-stylus">Compiling CSS from Stylus</h2>
+<p>Bootstrap Stylus uses <a href="http://gruntjs.com/">Grunt</a> with convenient methods for working with the framework. To use it, install the required dependencies as directed and then run some Grunt commands.</p>
+<h3 id="install-grunt">Install Grunt</h3>
+<p>From the command line:</p>
+<ol>
+<li>Install <code>grunt-cli</code> globally with <code>npm install -g grunt-cli</code>.</li>
+<li>Install the <a href="package.json">necessary local dependencies</a> via <code>npm install</code></li>
+</ol>
+<p>When completed, you&#39;ll be able to run the various Grunt commands provided from the command line.</p>
+<p><strong>Unfamiliar with <code>npm</code>? Don&#39;t have node installed?</strong> That&#39;s a-okay. npm stands for <a href="http://npmjs.org/">node packaged modules</a> and is a way to manage development dependencies through node.js. <a href="http://nodejs.org/download/">Download and install node.js</a> before proceeding.</p>
+<h3 id="available-grunt-commands">Available Grunt commands</h3>
+<h4 id="compile-css-and-javascript-grunt-dist-">Compile CSS and JavaScript - <code>grunt dist</code></h4>
+<p><code>grunt dist</code> creates the <code>/dist</code> directory with compiled files. <strong>Uses <a href="http://lisperator.net/uglifyjs/">UglifyJS</a>.</strong></p>
+<h4 id="legacy-2-3-2-theme-grunt-theme-">Legacy 2.3.2 Theme - <code>grunt theme</code></h4>
+<p>This will compile the <code>theme.styl</code> separately and output it to the <code>/dist</code> folder.</p>
+<h4 id="watch-grunt-watch-">Watch - <code>grunt watch</code></h4>
+<p>This is a convenience method for watching just Stylus files and automatically building them whenever you save.</p>
+<h3 id="troubleshooting-dependencies">Troubleshooting dependencies</h3>
+<p>Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun <code>npm install</code>.</p>
+<h3 id="usage">Usage</h3>
+<ul>
+<li>You may select what css components you want to include by editing <code>stylus/bootstrap.styl</code>.</li>
+<li>You may override <a href="http://getbootstrap.com/customize/#less-variables">bootstrap variables</a> in your private code, for example<pre><code>// myStyles.styl
+$font-family-serif ?= &#39;Merriweather&#39;, serif
+$font-family-base ?= $font-family-serif
+@import &quot;bower_components/bootstrap-stylus/stylus/bootstrap.styl&quot; // Or wherever your bootstrap.styl is located
+</code></pre>this allows flexibility for easily updating to new bootstrap versions. See <a href="https://learnboost.github.io/stylus/docs/operators.html#conditional-assignment--">?=</a>.</li>
+<li>You may select what javascript components you want by editing the uglify task in <code>gulpfile.js</code>. You can ommit components by removing them from the <code>uglify:dist:files</code> list.</li>
+</ul>
+<h2 id="original-authors">Original Authors</h2>
+<p><strong>Mark Otto</strong></p>
+<ul>
+<li><a href="http://twitter.com/mdo">http://twitter.com/mdo</a></li>
+<li><a href="http://github.com/mdo">http://github.com/mdo</a></li>
+</ul>
+<p><strong>Jacob Thornton</strong></p>
+<ul>
+<li><a href="http://twitter.com/fat">http://twitter.com/fat</a></li>
+<li><a href="http://github.com/fat">http://github.com/fat</a></li>
+</ul>
+<h2 id="copyright-and-license">Copyright and license</h2>
+<p>Copyright 2013 Twitter, Inc under <a href="LICENSE">the Apache 2.0 license</a>.</p>
