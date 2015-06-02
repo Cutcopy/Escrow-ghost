@@ -1,22 +1,31 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-fixed-top navbar-collapse" id="topnav">
    <div class="container-fluid">
        <div class="nabar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#navbar-links">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-             {{#if @blog.logo}}<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+             {{#if @blog.logo}}<a class="navbar-brand hidden" id="topnav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
        </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbar-links">
             <ul class="nav navbar-nav">
                 {{#foreach navigation}}
                     <li class="{{#if current}}active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
                 {{/foreach}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="" href="{{@blog.url}}/rss/">Subscribe</a></li>
+                <li>
+                    <ul class="socials">
+                        <li><a class="" href="http://facebook.com"><i class="fa fa-facebook"></i><span class="sr-only">Facebook</span></a></li>
+                        <li><a class="" href="http://linkedin.com"><i class="fa fa-linkedin"></i><span class="sr-only">Linkedin</span></a></li>
+                        <li><a class="" href="http://plus.google.com"><i class="fa fa-google-plus"></i><span class="sr-only">Google Plus</span></a></li>
+                        <li><a class="" href="http://youtube.com"><i class="fa fa-youtube"></i><span class="sr-only">Youtube</span></a></li>
+                        <li><a class="" href="http://twitter.com"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a></li>
+                        <li><a class="" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i><span class="sr-only">Subscribe</span></a></li>
+                    </ul>
+                </li>
             </ul>
        </div>
     </div>
