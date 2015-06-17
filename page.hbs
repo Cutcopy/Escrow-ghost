@@ -5,20 +5,27 @@
 
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
-
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"> 
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
+<header class="jumbotron hero{{#if image}}" style="background-image: url({{image}});{{else}}" style="background-image: url({{@blog.cover}});{{/if}}">
+   <div class="container">
+             <div class="row blog-logo">
+                 {{#if @blog.logo}}<a class="hero-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+            </div> 
+            <div class="row">
+                <h1>{{@blog.title}}</h1>
+            </div>
+            <div class="row">
+                <div class="row"><h2 class="page-description">{{@blog.description}}</h2></div>
+            </div>
+    </div>
 </header>
+<main class="container content" role="main">
+    <article class="{{post_class}} col-md-8">
 
-<main class="content" role="main">
-    <article class="{{post_class}}">
-
-        <header class="post-header">
+        <header class="row post-header">
             <h1 class="post-title">{{title}}</h1>
         </header>
 
-        <section class="post-content">
+        <section class="row post-content">
             {{content}}
         </section>
 

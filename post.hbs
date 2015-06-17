@@ -21,16 +21,16 @@
 </header>
 
 <main class="container content" role="main" itemscope='blog' itemtype='http://schema.org/Blog'>
-    <article class="{{post_class}}" itemprop="blogPost">
+    <article class="{{post_class}} col-md-12" itemprop="blogPost">
 
-        <header class="post-header">
+        <header class="row post-header">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
                 <time class="post-date" itemprop="datePublished" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="row post-content">
             {{content}}
         </section>
 
@@ -45,7 +45,7 @@
             </figure>
             {{/if}}
 
-            <section class="author">
+            <section class="row author">
                 <h4><a itemprop="author" href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
@@ -61,7 +61,7 @@
 
         {{/author}}
 
-            <section class="share">
+            <section class="row share">
                 <h4>Share this post</h4>
                 <a class="fa fa-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
@@ -82,10 +82,10 @@
     </article>
 </main>
 
-<aside class="read-next">
+<aside class="container read-next">
     {{#next_post}}
     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
+        <section class="col-md-6 post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="19"}}&hellip;</p>
         </section>
@@ -93,7 +93,7 @@
     {{/next_post}}
     {{#prev_post}}
     <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
+        <section class="col-md-6 post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="19"}}&hellip;</p>
         </section>

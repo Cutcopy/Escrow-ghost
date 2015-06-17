@@ -5,15 +5,19 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
-        <nav class="main-nav overlay clearfix">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>
-    </header>
-
+    <header class="jumbotron hero{{#if cover}}" style="background-image: url({{cover}});{{else}}" style="background-image: url({{@blog.cover}});{{/if}}">
+   <div class="container">
+             <div class="row blog-logo">
+                 {{#if @blog.logo}}<a class="hero-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+            </div> 
+            <div class="row">
+                <h1>{{@blog.title}}</h1>
+            </div>
+            <div class="row">
+                <div class="row"><h2 class="page-description">{{@blog.description}}</h2></div>
+            </div>
+    </div>
+</header>
     <section class="author-profile inner">
         {{#if image}}
         <figure class="author-image">
