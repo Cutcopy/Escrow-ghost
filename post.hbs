@@ -20,13 +20,13 @@
     </div>
 </header>
 
-<main class="container content" role="main">
-    <article class="{{post_class}}">
+<main class="container content" role="main" itemscope='blog' itemtype='http://schema.org/Blog'>
+    <article class="{{post_class}}" itemprop="blogPost">
 
         <header class="post-header">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <time class="post-date" itemprop="datePublished" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
@@ -46,10 +46,10 @@
             {{/if}}
 
             <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
+                <h4><a itemprop="author" href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
-                    <p>{{bio}}</p>
+                    <p itemprop="about">{{bio}}</p>
                 {{else}}
                     <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
