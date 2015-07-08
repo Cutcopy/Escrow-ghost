@@ -1,19 +1,50 @@
 .side-column
-    background-color red
-    /* display flex
-    flex-direction column */
     .client-info
         position relative
         text-align center
     .headshot
-        max-width 50%
         border-radius 50%
-        margin 1em
-        display inline block
+        margin 0em auto
+        height 20em
+        width 20em
+        display block
+        background url(http://fillmurray.com/300/300)
     .reviews
         text-align center
         margin 1em 0em
+        .yelp
+            background-color #B90C02
+            background-image url("/assets/img/Yelp-just-logo.svg")
+            background-position center center
+            background-size contain
+            color transparent
+            text-shadow none
+        .zillow
+            background-color #0074E4
+            background-image url("/assets/img/zillow-just-logo.svg")
+            background-position center center
+            background-size contain
+            background-size 80%
+            background-repeat no-repeat
+            color transparent
+            text-shadow none 
+        .trulia
+            background-color #53B50A
+            background-image url("/assets/img/trulia-just-logo.svg")
+            background-position center center
+            background-size 80%
+            background-repeat no-repeat
+            color transparent
+            text-shadow none
     .bio
         margin 0 1.5em
     .contact-info
-        margin 1em
+        margin 1.5em
+    .contact-form
+        padding 1.5em
+        form
+            margin 0 auto
+            input
+                width 80%
+            textarea
+                width 80%

@@ -18,10 +18,10 @@
             </div>
     </div>
 </header>
-    <section class="author-profile inner">
+    <section class="author-profile container">
         {{#if image}}
-        <figure class="author-image">
-            <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
+        <figure class="side-column">
+            <div class="headshot" style="background-image: url({{image}})"><span class="sr-only">{{name}}'s Picture</span></div>
         </figure>
         {{/if}}
         <h1 class="author-title">{{name}}</h1>
